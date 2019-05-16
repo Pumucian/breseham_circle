@@ -28,7 +28,7 @@ void paintPurePixels(int x, int y, int xOffset, int yOffset){
 
 void bresenham(){
   double x = radius / (double) pixelSize;
-  int xOffset = (xCenter + radius) / pixelSize,yOffset = yCenter / pixelSize, y = 0;  
+  int xOffset = (xCenter + radius) / pixelSize, yOffset = yCenter / pixelSize, y = 0;  
   xOffset = xOffset - (int)x;
   while (x >= y){
     paintPurePixels((int) x, y, xOffset, yOffset);
@@ -39,7 +39,7 @@ void bresenham(){
 }
 
 void error(){
-  println("Pixel size must be divisible by both width and height.");
+  println("Pixel size must be divisible by both width and height (800, 600).");
   System.exit(1);
 }
 
@@ -56,15 +56,6 @@ void showPixels(){
     shape(pShape);
   }
 }
-
-/*void paintPixel(int x, int y){
-  int pixelPosition = (int)(x / pixelSize) * heightPixels + (int)(y / pixelSize);
-  bigPixels[pixelPosition].setFill(128);
-}
-
-void mouseClicked(){
-  paintPixel(mouseX, mouseY);
-}*/
 
 void draw(){
   showPixels();
